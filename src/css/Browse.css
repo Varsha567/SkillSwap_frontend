@@ -1,0 +1,248 @@
+/* Import Google Font - Inter for consistency */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* NEW: Define CSS Variables for colors based on your provided theme */
+:root {
+    --primary-orange: #FF7000;
+    --secondary-orange: #F97432;
+    --accent-light: #FFAC4A;
+    --accent-lighter: #F9C87C;
+    --accent-lightest: #FFFEC9;
+    --brand-red: #e6635a;
+    --white: #ffffff;
+    --dark-text: #2a2a2a;
+    --light-gray: #f5f5f5;
+    --border-gray: #e0e0e0;
+
+    /* Re-mapping some variables for clarity if still used in other components,
+       or you can remove them if only browse.css uses these new ones */
+    --primary-bg: var(--light-gray); /* Main page background */
+    --secondary-bg: var(--white);    /* For cards/inner sections */
+    --primary-text: var(--dark-text); /* Main text color */
+    --accent-primary: var(--primary-orange); /* Main accent */
+    --accent-secondary: var(--secondary-orange); /* Secondary accent */
+    --subtle-border: var(--border-gray); /* Subtle borders */
+    --shadow-heavy: rgba(0, 0, 0, 0.25); /* Darker shadow for light background */
+    --shadow-light: rgba(0, 0, 0, 0.1);  /* Lighter shadow for light background */
+    --error-red: var(--brand-red);
+}
+
+
+.browse-page-container {
+    background-color: var(--primary-bg); /* light-gray background */
+    min-height: calc(100vh - 4rem); /* Adjust for header/footer */
+    font-family: 'Inter', sans-serif;
+    color: var(--primary-text); /* dark-text */
+    padding-bottom: 3rem;
+}
+
+/* Browse Hero Section */
+.browse-hero-section {
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%); /* Orange gradient */
+    padding: 4rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 5px 20px var(--shadow-heavy); /* Adjusted shadow */
+    color: var(--white); /* White text on orange background */
+}
+
+.browse-hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.8s ease-out 0.2s both;
+    color: var(--white); /* Changed to white for better contrast on orange */
+} 
+
+.browse-hero-subtext {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+     animation: slideUp 0.8s ease-out 0.4s both;
+    color: rgba(255, 255, 255, 0.9); /* Lighter text for subtext on orange */
+}
+
+/* Category Buttons Container */
+.category-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    border-radius: 0.75rem;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05); /* Lighter inner shadow */
+    border: 1px solid var(--border-gray); /* Subtle border */
+}
+
+.category-button {
+    background-color: var(--white); /* White background for inactive buttons */
+    color: var(--dark-text); /* Dark text for inactive buttons */
+    border: 1px solid var(--border-gray);
+    padding: 0.7rem 1.2rem;
+    border-radius: 9999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px var(--shadow-light); /* Lighter shadow */
+}
+
+.category-button:hover {
+    background-color: var(--light-gray); /* light-gray on hover */
+    color: var(--primary-orange); /* primary-orange text on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-heavy);
+}
+
+.category-button.active {
+    background: linear-gradient(45deg, var(--primary-orange), var(--secondary-orange)); /* Orange gradient for active */
+    color: var(--white); /* White text for active */
+    border-color: var(--primary-orange);
+    box-shadow: 0 4px 15px rgba(255, 112, 0, 0.4); /* Shadow with primary orange */
+    transform: scale(1.02);
+}
+
+.category-button.active:hover {
+    background: linear-gradient(45deg, var(--secondary-orange), var(--primary-orange)); /* Slightly different gradient on hover for active */
+    color: var(--white); /* Keep white text */
+    transform: scale(1.05);
+}
+
+.category-button .fas {
+    font-size: 1.1rem;
+    color: var(--dark-text); /* Default icon color (dark-text) */
+    transition: color 0.3s ease;
+}
+
+.category-button.active .fas {
+    color: var(--white); /* Active icon color (white) */
+}
+
+
+/* Skill Listings Section (reusing dashboard section styles) */
+.skill-listings-section {
+    background-color: var(--primary-bg); /* light-gray background */
+    padding: 4rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.skill-listings-section .section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-orange); /* primary-orange */
+    margin-bottom: 2.5rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.skill-listings-section .section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80px;
+    height: 4px;
+    background-color: var(--secondary-orange); /* secondary-orange */
+    border-radius: 2px;
+}
+
+
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.no-skills-message, .loading-message-text, .error-message-text {
+    font-size: 1.1rem;
+    color: var(--dark-text); /* dark-text */
+    padding: 2rem;
+    text-align: center;
+    display: block;
+}
+
+.error-message-text {
+    color: var(--brand-red); /* brand-red */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .browse-hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .browse-hero-subtext {
+        font-size: 1rem;
+    }
+    .category-buttons-container {
+        padding: 0.75rem;
+        gap: 0.5rem;
+    }
+    .category-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        gap: 0.4rem;
+    }
+    .category-button .fas {
+        font-size: 1rem;
+    }
+    .skill-listings-section {
+        padding: 3rem 1rem;
+    }
+    .skill-listings-section .section-title {
+        font-size: 2rem;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .browse-hero-section {
+        padding: 3rem 0.5rem;
+    }
+    .browse-hero-content h1 {
+        font-size: 2rem;
+    }
+    .browse-hero-subtext {
+        font-size: 0.9rem;
+    }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

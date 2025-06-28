@@ -1,0 +1,248 @@
+/* Header.css */
+:root {
+  /* Primary colors */
+  --primary-orange: #FF7000;
+  --secondary-orange: #F97432;
+  --accent-light: #FFAC4A;
+  --accent-lighter: #F9C87C;
+  --accent-lightest: #FFFEC9;
+  --brand-red: #e6635a;
+  
+  /* Contrasting colors */
+  --dark-blue: #2c3e50;       /* For text/contrast */
+  --teal: #1abc9c;            /* Complementary accent */
+  --light-gray: #ecf0f1;      /* Backgrounds */
+  
+  /* Neutrals */
+  --white: #ffffff;
+  --black: #222222;
+  --gray: #95a5a6;
+}
+
+/* Header Base Styles */
+.header {
+  background-color: var(--white);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0.8rem 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Logo Styles */
+.header-logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-orange);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.header-logo:hover {
+  color: var(--brand-red);
+}
+
+.logo-img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+/* Navigation Styles */
+.nav-list {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: var(--dark-blue);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--primary-orange);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-orange);
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Auth Section Styles */
+.header-auth-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.auth-button {
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.login-button {
+  color: var(--primary-orange);
+  border: 2px solid var(--primary-orange);
+  background-color: transparent;
+}
+
+.login-button:hover {
+  background-color: rgba(255, 112, 0, 0.1);
+}
+
+.signup-button {
+  background-color: var(--primary-orange);
+  color: var(--white);
+  border: 2px solid var(--primary-orange);
+}
+
+.signup-button:hover {
+  background-color: var(--secondary-orange);
+  border-color: var(--secondary-orange);
+}
+
+/* Avatar Dropdown Styles */
+.avatar-dropdown-container {
+  position: relative;
+}
+
+.avatar-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.avatar-button:hover {
+  background-color: var(--accent-lightest);
+}
+
+.avatar-placeholder-svg {
+  width: 30px;
+  height: 30px;
+  color: var(--primary-orange);
+}
+
+.avatar-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-username {
+  font-weight: 500;
+  color: var(--dark-blue);
+}
+
+.dropdown-arrow {
+  font-size: 0.8rem;
+  color: var(--gray);
+  transition: transform 0.3s;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s;
+  z-index: 100;
+}
+
+.is-open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.7rem 1.2rem;
+  color: var(--dark-blue);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: var(--accent-lightest);
+  color: var(--primary-orange);
+}
+
+.logout-button-in-dropdown {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  color: var(--brand-red);
+}
+
+.logout-button-in-dropdown:hover {
+  background-color: rgba(230, 99, 90, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .nav-list {
+    margin: 1rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header-auth-section {
+    margin-top: 1rem;
+  }
+}

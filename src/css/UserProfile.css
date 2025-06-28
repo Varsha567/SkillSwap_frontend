@@ -1,0 +1,262 @@
+/* UserProfile.css */
+:root {
+  --primary-orange: #FF7000;
+  --secondary-orange: #F97432;
+  --accent-light: #FFAC4A;
+  --accent-lighter: #F9C87C;
+  --accent-lightest: #FFFEC9;
+  --brand-red: #e6635a;
+  --white: #ffffff;
+  --dark-text: #2a2a2a;
+  --light-gray: #f5f5f5;
+  --border-gray: #e0e0e0;
+}
+
+/* Base Page Styles */
+.user-profile-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  color: var(--dark-text);
+}
+
+/* Profile Card */
+.profile-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid var(--primary-orange);
+  position: relative;
+}
+
+.profile-name {
+  color: var(--primary-orange);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.own-profile-indicator {
+  font-size: 0.9rem;
+  color: var(--secondary-orange);
+  background-color: var(--accent-lightest);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+}
+
+.profile-bio {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed var(--border-gray);
+}
+
+.profile-detail {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.discord-handle-display {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Edit Button */
+.edit-profile-button {
+  background-color: var(--primary-orange);
+  color: var(--white);
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 1rem;
+}
+
+.edit-profile-button:hover {
+  background-color: var(--secondary-orange);
+  transform: translateY(-2px);
+}
+
+/* Copy Button */
+.copy-button {
+  background-color: var(--accent-lightest);
+  color: var(--primary-orange);
+  border: 1px solid var(--accent-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.copy-button:hover {
+  background-color: var(--accent-light);
+  color: var(--white);
+}
+
+/* Profile Incomplete Warning */
+.profile-incomplete-warning {
+  background-color: rgba(255, 172, 74, 0.15);
+  color: var(--secondary-orange);
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.profile-incomplete-warning a {
+  color: var(--primary-orange);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.profile-incomplete-warning a:hover {
+  text-decoration: underline;
+}
+
+/* User Posts Section */
+.user-posts-section {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+  color: var(--primary-orange);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent-lightest);
+}
+
+/* User Posts Grid */
+.user-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.user-post-card {
+  background-color: var(--light-gray);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  border-left: 3px solid var(--accent-light);
+}
+
+.user-post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(255, 112, 0, 0.1);
+}
+
+.user-post-card h4 {
+  color: var(--primary-orange);
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.post-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.post-category {
+  font-size: 0.85rem;
+  color: var(--secondary-orange);
+  margin-bottom: 0.5rem;
+}
+
+.post-level {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-swap-for {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.post-status span {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background-color: var(--accent-lightest);
+  color: var(--secondary-orange);
+}
+
+/* Messages and States */
+.loading-message-box,
+.error-message-box {
+  background-color: var(--light-gray);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.loading-text,
+.error-text {
+  color: var(--dark-text);
+  font-size: 1.1rem;
+}
+
+.no-data-message {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-size: 1rem;
+}
+
+.no-data-message a {
+  color: var(--primary-orange);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.no-data-message a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-card,
+  .user-posts-section {
+    padding: 1.5rem;
+  }
+  
+  .profile-name {
+    font-size: 1.5rem;
+  }
+  
+  .user-posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-profile-page {
+    padding: 1rem;
+  }
+  
+  .profile-card,
+  .user-posts-section {
+    padding: 1.25rem;
+  }
+}

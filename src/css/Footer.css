@@ -1,0 +1,132 @@
+/* Footer.css */
+
+/* Define CSS Variables for colors based on SkillCard.css */
+:root {
+  --primary-orange: #FF7000;
+  --secondary-orange: #F97432;
+  --accent-light: #FFAC4A;
+  --accent-lighter: #F9C87C;
+  --accent-lightest: #FFFEC9;
+  --brand-red: #e6635a;
+  --white: #ffffff;
+  --dark-text: #2a2a2a;
+  --light-gray: #f5f5f5;
+  --border-gray: #e0e0e0;
+}
+
+/* Main Footer Container */
+.footer {
+  background-color: var(--dark-text); /* Dark background for the footer */
+  color: var(--white); /* White text for contrast */
+  padding: 3rem 1rem; /* Generous padding top/bottom, some side padding */
+  font-family: 'Inter', sans-serif;
+  border-top: 4px solid var(--primary-orange); /* A subtle orange top border */
+}
+
+/* Flex container for footer sections */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+  justify-content: space-around; /* Distribute space evenly */
+  gap: 2rem; /* Space between sections */
+  max-width: 1200px; /* Max width for content, similar to main content */
+  margin: 0 auto; /* Center the container */
+  padding-bottom: 2rem; /* Padding before the bottom copyright */
+}
+
+/* Individual Footer Sections */
+.footer-section {
+  flex: 1; /* Allow sections to grow */
+  min-width: 180px; /* Minimum width for each section to prevent squishing */
+  text-align: center; /* Center align content within each section */
+}
+
+.footer-section h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-orange); /* Orange heading */
+  margin-bottom: 1rem;
+  position: relative; /* For underline effect */
+  display: inline-block; /* To make underline fit text */
+}
+
+.footer-section h4::after {
+  content: '';
+  display: block;
+  width: 50%; /* Shorter underline */
+  height: 2px;
+  background-color: var(--accent-light); /* Lighter orange underline */
+  margin: 0.5rem auto 0; /* Center and space the underline */
+  border-radius: 2px;
+}
+
+/* Footer List (for links) */
+.footer-list {
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li {
+  margin-bottom: 0.7rem; /* Space between list items */
+}
+
+/* Footer Links */
+.footer-link {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block; /* For transform effect */
+}
+
+.footer-link:hover {
+  color: var(--primary-orange); /* Orange on hover */
+  transform: translateX(5px); /* Slight slide effect */
+}
+
+/* Bottom Copyright Section */
+.footer-bottom {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.2); /* Dashed white border */
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7); /* Slightly muted white */
+}
+
+.footer-bottom span {
+  font-weight: 600;
+  color: var(--primary-orange); /* Highlight SkillSwap name */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center sections when stacked */
+    text-align: center;
+  }
+
+  .footer-section {
+    width: 100%; /* Full width when stacked */
+    max-width: 300px; /* Limit width even when full width */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 0.5rem;
+  }
+
+  .footer-section h4 {
+    font-size: 1.1rem;
+  }
+
+  .footer-link {
+    font-size: 0.9rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.75rem;
+  }
+}

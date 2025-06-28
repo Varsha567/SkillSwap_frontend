@@ -1,0 +1,255 @@
+/* CompleteProfile.css - Orange Theme */
+:root {
+  --primary-orange: #FF7000;
+  --secondary-orange: #F97432;
+  --accent-light: #FFAC4A;
+  --accent-lighter: #F9C87C;
+  --accent-lightest: #FFFEC9;
+  --brand-red: #e6635a;
+  --white: #ffffff;
+  --dark-text: #2a2a2a;
+  --light-gray: #f5f5f5;
+  --border-gray: #e0e0e0;
+}
+
+.complete-profile-page {
+  background-color: var(--white);
+  min-height: calc(100vh - 4rem);
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.complete-profile-form-container {
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  max-width: 600px;
+  width: 90%;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-gray);
+}
+
+.form-title {
+  color: var(--primary-orange);
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Messages */
+.error-message {
+  background-color: rgba(230, 99, 90, 0.15);
+  color: var(--brand-red);
+  border: 1px solid var(--brand-red);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.success-message {
+  background-color: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+  border: 1px solid #22c55e;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* Form Groups and Inputs */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  color: var(--dark-text);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background-color: var(--white);
+  border: 1px solid var(--border-gray);
+  border-radius: 8px;
+  color: var(--dark-text);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--primary-orange);
+  box-shadow: 0 0 0 3px rgba(255, 112, 0, 0.2);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-help-text {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+/* Skills Tags */
+.skills-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.skill-tag {
+  background-color: var(--accent-lightest);
+  color: var(--secondary-orange);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Submit Button */
+.submit-button {
+  background-color: var(--primary-orange);
+  color: var(--white);
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 1rem;
+  box-shadow: 0 4px 12px rgba(255, 112, 0, 0.3);
+}
+
+.submit-button:hover {
+  background-color: var(--secondary-orange);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 112, 0, 0.4);
+}
+
+.submit-button:disabled {
+  background-color: var(--border-gray);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Loading State */
+.complete-profile-page.loading-state {
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.loading-message-box {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: var(--dark-text);
+}
+
+.loading-text {
+  font-size: 1.2rem;
+}
+
+/* User Posts Section */
+.user-posts-section {
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  max-width: 900px;
+  width: 90%;
+  margin-top: 2rem;
+  border: 1px solid var(--border-gray);
+}
+
+.section-title {
+  color: var(--primary-orange);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.user-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.user-post-card {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid var(--accent-light);
+  transition: all 0.3s ease;
+}
+
+.user-post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 112, 0, 0.15);
+}
+
+.user-post-card h3 {
+  color: var(--primary-orange);
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.post-description {
+  color: var(--dark-text);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.post-category {
+  color: var(--secondary-orange);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-status {
+  font-size: 0.95rem;
+  color: var(--dark-text);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .complete-profile-form-container,
+  .user-posts-section {
+    padding: 1.5rem;
+    width: 95%;
+  }
+  
+  .form-title,
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .user-posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
