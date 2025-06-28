@@ -26,7 +26,7 @@ const Signup = () => {
         setLoading(true);
 
         try {
-            const response = await fetch('http://localhost:5000/api/auth/register', {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/auth/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -129,7 +129,7 @@ const Signup = () => {
                     <p>OR</p>
                     <hr />
                 </div>
-                <button className="google-signin-button" onClick={() => window.location.href = 'http://localhost:5000/api/auth/google'}>
+                <button className="google-signin-button" onClick={() => window.location.href = `${process.env.REACT_APP_BACKEND_URL}/api/auth/google`}>
                     <img src={google_logo} alt="Google icon" className="google-icon" />
                     Continue with Google
                 </button>
